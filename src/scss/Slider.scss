@@ -1,0 +1,100 @@
+$background: #eeee;
+$maxWidthAllowed: 400px;
+$imagePadding: 40px;
+
+
+$primary-l: #ffffff;
+$primary-d: #e5e5e5;
+$secondary: #191645;
+$accent: #43c6ac;
+
+
+.card {
+  padding: 1em 2em 1em 2em;
+  background-color: $secondary;
+  max-width: calc($maxWidthAllowed + 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  height: min-content;
+  
+  
+  
+  
+  h1{
+    text-align: center;
+    word-wrap: break-word;
+    color: $primary-l;
+  }
+  
+  #slider-image-container{
+    aspect-ratio: 1 / 1;
+    width: $maxWidthAllowed;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: .75em 0 .75em 0;
+    
+    .loading {
+      align-self: center;
+      width: 100%;
+      text-align: center;
+      color: $primary-l;
+    }
+    
+    .imageHolder {
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      background-color: $primary-d;
+      
+      display: flex;
+      aspect-ratio: 1 / 1;
+      width: calc($maxWidthAllowed - $imagePadding * 2);
+      justify-content: center;
+      align-items: center;
+      padding: $imagePadding;
+  
+      img {
+      aspect-ratio: 1 / auto;
+      max-width: calc($maxWidthAllowed - $imagePadding);
+      transition: ease-in-out .33s;
+      transform: scale(1.0);
+      }
+
+      img:not(.focused){
+        opacity: 0;
+        filter: blur(15px);
+      }
+    }
+  }
+
+  .buttonsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: .75em;
+    column-gap: .75em;
+    width: $maxWidthAllowed;
+    justify-content: space-around;
+
+    button{
+      border: none;
+      background-color: $accent;
+      aspect-ratio: 6 / 1;
+      border-radius: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      transition: .1s ease-in-out;
+      color: $secondary;
+    }
+
+    button:hover {
+      box-shadow: $accent 0 0 10px;
+      color: $primary-l;
+    }
+    button:active{
+      color: $secondary;
+    }
+  }
+}

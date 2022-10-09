@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-image: linear-gradient(to right bottom, #191645, #004175, #006e97, #009aa8, #43c6ac);
+  height: 100vh;
+}
+
+.App{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
